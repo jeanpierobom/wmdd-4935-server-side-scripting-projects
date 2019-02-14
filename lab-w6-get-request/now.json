@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "name": "labw6",
+    "env": {
+      "DBHOST": "<host>",
+      "DBPORT": "<port>",
+      "DBUSER": "<user>",
+      "DBPASSWORD": "<password>",
+      "DBNAME": "<dbname>"
+    },    
+    "builds": [
+      { "src": "index.js", "use": "@now/node" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/index.js" }
+    ]
+  }
