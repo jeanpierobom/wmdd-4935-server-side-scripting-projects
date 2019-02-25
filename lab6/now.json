@@ -2,11 +2,11 @@
     "version": 2,
     "name": "lab6-wmdd",
     "env": {
-        "DBHOST": "test.cfwbpq952zam.us-west-2.rds.amazonaws.com",
-        "DBPORT": "3306",
-        "DBUSER": "test",
-        "DBPASSWORD": "Pass2019",
-        "DBNAME": "movies"
+        "DBHOST": "DBHOST",
+        "DBPORT": "DBPORT",
+        "DBUSER": "DBUSER",
+        "DBPASSWORD": "DBPASSWORD",
+        "DBNAME": "DBNAME"
     },    
     "builds": [
         { "src": "index.js", "use": "@now/node" }
