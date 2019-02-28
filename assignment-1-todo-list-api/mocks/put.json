@@ -1,6 +1,6 @@
 {
-    "todoId": 1,
+    "todoId": 8,
     "todoItem": "Updating an item in the todo list",
-    "todoStatus": true,
+    "todoStatus": 0,
     "todoDueBy": "2019-03-30"
 }
