@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "name": "todoList",
+    "env": {
+      "DBHOST": "<host>",
+      "DBPORT": "<port>",
+      "DBUSER": "<user>",
+      "DBPASSWORD": "<password>",
+      "DBNAME": "<dbname>"
+    },
+    "builds": [
+      { "src": "api/*/index.js", "use": "@now/node" }
+    ],
+    "routes": [
+      { "src": "/", "methods":["GET"], "dest": "/api/get" },
+      { "src": "/", "methods":["POST"], "dest": "/api/post" },
+      { "src": "/", "methods":["PUT"], "dest": "/api/put" },
+      { "src": "/", "methods":["DELETE"], "dest": "/api/delete" }
+    ]
+  }
+  
