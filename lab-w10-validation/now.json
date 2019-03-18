@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "w10-validation",
+  "builds": [
+    { "src": "api-joi/*/index.js", "use": "@now/node" },
+    { "src": "api-yup/*/index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api-joi", "methods":["POST"], "dest": "/api-joi/post" },
+    { "src": "/api-yup", "methods":["POST"], "dest": "/api-yup/post" }
+  ]
+}
