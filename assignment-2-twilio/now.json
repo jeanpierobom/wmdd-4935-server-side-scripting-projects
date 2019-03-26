@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "name": "twilio",
+  "env": {
+    "DBHOST": "<DBHOST>",
+    "DBPORT": "<DBPORT>",
+    "DBUSER": "<DBUSER>",
+    "DBPASSWORD": "<DBPASS>",
+    "DBNAME": "<DBNAME>"
+  },
+  "builds": [
+    { "src": "api/*/index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/", "methods":["GET"], "dest": "/api/get" },
+    { "src": "/", "methods":["POST"], "dest": "/api/post" }
+  ]
+}
