@@ -9,8 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dateformat": "^3.0.3",
+    "joi": "^14.3.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
-    "promise-mysql": "^3.3.1"
+    "promise-mysql": "^3.3.1",
+    "twilio": "^3.29.2"
   }
 }
