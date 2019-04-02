@@ -3,6 +3,7 @@ const bodyParser = require('koa-bodyparser')
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 const Joi = require('joi');
 const dateformat = require('dateformat');
+const logger = require('pino')()
 const dao = require('../../db/dao')
 
 // Initialize Koa
@@ -23,6 +24,8 @@ function getTwimlMessage(text) {
 
 app.use(async ctx => {
 
+  logger.info('Executing the POST method to store a new item in the todo list.')
+
   // Define the response type
   ctx.type = 'text/xml';
 
@@ -34,6 +37,7 @@ app.use(async ctx => {
 
   if (result.error) {
     ctx.body = getTwimlMessage(`Error: ${result.error.details[0].message}`)
+    logger.info(`There was an error to validate the payload: ${result.error.details[0].message}`)
     return;
   }
 
@@ -49,6 +53,8 @@ app.use(async ctx => {
   const item = await dao.create(Body, todoStatus, todoDueBy)
   ctx.body = getTwimlMessage(item ? `Todo item created sucessfully: ${Body}` : 'No todo item was created')
 
+  logger.info('Todo item created sucessfully.')
+  
 })
 
 module.exports = app.callback()
